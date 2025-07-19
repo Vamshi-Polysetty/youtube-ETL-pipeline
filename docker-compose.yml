@@ -1,0 +1,48 @@
+# version: '3'
+# services:
+
+#   youtube-etl-pipeline-service:
+
+#     image: youtube-etl-pipeline:latest
+ 
+#     volumes:
+#       - ./airflow:/opt/airflow
+
+#     ports:
+#       - "8080:8080"
+
+#     command: airflow standalone
+
+version: '3'
+services:
+
+  youtube-etl-pipeline-service:
+    image: youtube-etl-pipeline:latest
+    volumes:
+      - ./airflow:/opt/airflow
+    ports:
+      - "8080:8080"
+    command: airflow standalone
+    depends_on:
+      - postgres  # add this to make sure PostgreSQL starts first
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=yt_trending
+      - POSTGRES_USER=vamshi
+      - POSTGRES_PASSWORD=secret
+
+  postgres:
+    image: postgres:15
+    container_name: yt_postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: yt_trending
+      POSTGRES_USER: vamshi
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
