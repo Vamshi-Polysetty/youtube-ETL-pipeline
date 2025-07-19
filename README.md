@@ -12,7 +12,7 @@ This project is a complete end-to-end ETL (Extract, Transform, Load) data pipeli
 - **Visualization**: Streamlit dashboard with data filters and insights
 
 ---
-
+```
 ## 🧱 Folder Structure
 
 YT_ETL/
@@ -32,7 +32,7 @@ output/
 ├── app.py # Streamlit dashboard
 ├── check_postgres.py # PostgreSQL connection test
 
-
+```
 ---
 
 ## ⚙️ How It Works
@@ -64,13 +64,13 @@ cd YT_ETL
 docker-compose up --build
 ```
 
-**Airflow UI**: http://localhost:8080 (Default login: airflow / airflow)
-**PostgreSQL**: accessible via localhost:5433
+**Airflow UI**: http://localhost:8080 (Default login: airflow / airflow)  
+**PostgreSQL**: accessible via localhost:5433  
 
 ### 3️⃣ Trigger the Airflow DAG
 
-Go to http://localhost:8080
-Trigger the DAG youtube_dag to start the ETL process
+Go to http://localhost:8080  
+Trigger the DAG youtube_dag to start the ETL process  
 
 ### 4️⃣ Start Streamlit Dashboard
 In a new terminal:
@@ -83,9 +83,9 @@ Visit http://localhost:8501 to view your dashboard.
 ---
 
 ### ✅ Features
-🌀 Modular DAG for ETL tasks (Extract → Transform → Load)
-📈 Clean and interactive Streamlit UI for trend analysis
-🐳 Docker-based setup for portability and ease of deployment
-🐘 PostgreSQL integration for production-grade structured storage
+🌀 Modular DAG for ETL tasks (Extract → Transform → Load)  
+📈 Clean and interactive Streamlit UI for trend analysis  
+🐳 Docker-based setup for portability and ease of deployment  
+🐘 PostgreSQL integration for production-grade structured storage  
 
 ---
