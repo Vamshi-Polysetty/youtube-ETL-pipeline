@@ -8,7 +8,7 @@ def load_to_postgres():
     df = pd.read_csv(os.path.join(DATA_DIR, "clean_data.csv"))
 
     # PostgreSQL connection details
-    db_user = "vamshi"
+    db_user = "postgre_user"
     db_password = "secret"
     db_host = "postgres"
     db_port = "5432"
