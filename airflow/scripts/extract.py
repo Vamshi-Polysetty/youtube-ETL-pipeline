@@ -7,7 +7,7 @@ import json
 DATA_DIR = "/opt/airflow/data" 
 
 
-API_KEY = "AIzaSyCYTb-HhtDKd-gxOOUO4-V2huQgv_TK7Ag"
+API_KEY = "YOUR_SECRET_API-KEY" # place your secret api key here
 REGION = "IN"
 URL = f"https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode={REGION}&maxResults=50&key={API_KEY}"
 
